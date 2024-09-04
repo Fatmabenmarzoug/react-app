@@ -9,7 +9,8 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: url('./loginphoto.jpg');
+  background: url('./download\ -\ copy.jpeg');
+  background-size: cover;
 }
 
 code {
