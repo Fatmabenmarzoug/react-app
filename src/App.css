@@ -49,7 +49,7 @@
     text-align: center;
 
 
-}
+} 
 .login h1{
   font-family: 'Arial Narrow Bold', sans-serif;
   font-size:bold;
@@ -121,7 +121,7 @@
   font-weight: 400;
 }
 .register-link a:hover{
-  color: rgb(128, 0, 111);
+  color: rgb(139, 184, 163);
  
 }
 .Register{
