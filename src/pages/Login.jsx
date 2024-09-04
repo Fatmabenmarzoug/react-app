@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import { mutate } from "swr";
 
-import Register from './Register';
-
+import {Home} from "./HomePage";
 import '../App.css';
 
 export default function Login() {
@@ -12,6 +11,7 @@ export default function Login() {
   const [isValidEmail, setIsValidEmail] = React.useState(false)
   const [password, setPassword] = React.useState("")
   const [inputPassword, setInputPassword] = React.useState(false)
+  const [isHomePage, setIsHomePage] = React.useState(false)
 
   const EmailForm = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
@@ -31,7 +31,7 @@ async function fetchUser(){
             .then((data) => {
               console.log(data.status);
               if(data.status===200){
-                alert("ok")
+               setIsHomePage(true)
               }
               else{
                 alert("user not found")
@@ -69,8 +69,8 @@ async function fetchUser(){
   }
   return (
 
-    // <form>
-      <div className='login'>
+    <React.Fragment>
+    { !isHomePage ?<div className='login'>
         <h1>Login Page</h1>
         <div className='input-box mb-2 d-flex flex-column'>
           <label>Email</label>
@@ -96,9 +96,9 @@ async function fetchUser(){
 
 
         </div>
+      </div>:<Home/>}
 
-      </div>
-      // </form>
+      </React.Fragment>
 
 
 
